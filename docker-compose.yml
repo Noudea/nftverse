@@ -1,0 +1,67 @@
+version: "3.7"
+services:
+  nftverse-server:
+    container_name: nftverse-server
+    image: bitnami/node
+    command: sh -c 'yarn install && yarn run dev'
+    working_dir: /nftverse-server
+    ports:
+      - 8000:8000
+    volumes:
+      - ./nftverse-server:/nftverse-server
+    depends_on:
+      - mongodb
+    networks:
+      - nftverse-network
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    env_file:
+      - ./nftverse-server/development.env
+
+  mongodb:
+    container_name: nftverse-mongodb
+    image : bitnami/mongodb:latest
+    ports:
+      - 27016:27017
+    environment:
+      - MONGODB_ROOT_USER=admin
+      - MONGODB_ROOT_PASSWORD=password
+      - MONGODB_USERNAME=nftverse
+      - MONGODB_PASSWORD=password
+      - MONGODB_DATABASE=nftverse
+    volumes:
+      - nftverse-mongodb-data:/bitnami/mongodb
+    networks:
+      - nftverse-network
+
+  nftverse-front:
+    container_name: nftverse-front
+    image: bitnami/node
+    working_dir: /nftverse-front
+    command: sh -c 'yarn install && yarn run dev'
+    ports: 
+      - 3000:3000
+    volumes:
+      - ./nftverse-front:/nftverse-front
+    networks:
+      - nftverse-network
+
+  apache:
+    container_name: nftverse-apache
+    image: bitnami/apache:latest
+    ports:
+      - 80:8080
+      - 443:8443
+    volumes:
+    - ./apache/vhosts:/vhosts:ro
+    depends_on:
+      - mongodb
+      - nftverse-server
+      - nftverse-front
+    networks:
+      - nftverse-network
+
+volumes:
+  nftverse-mongodb-data:
+networks:
+  nftverse-network:
