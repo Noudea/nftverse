@@ -1,0 +1,64 @@
+@import "../../../theme/theme.scss";
+
+.nftCard {
+  @include themed {
+    background-color: c("bg2");
+  }
+  width:24%;
+  display: flex;
+  flex-direction: column;
+  padding:20px;
+  border-radius:20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card_img_container {
+  border-radius: 20px;
+  background-color: #ecf1f9;
+  height: 22rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+.card_img_container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nftCard__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.nftCard_title {
+  font-size: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.nftCard_footer {
+  width: 100%;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+
+//Animations
+
+.nftCard:hover {
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
+.nftCard:hover .card_img_container img {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}

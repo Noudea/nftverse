@@ -1,0 +1,32 @@
+@import "../theme/theme.scss";
+
+
+html,
+body,
+#__next {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  min-height: 100vh;
+}
+
+.theme--dark {
+  background-color: map-get(map-get($themes, "dark"), "bg1");
+  color : map-get(map-get($themes, "dark"), "iv");
+  min-height: 100vh;
+}
+
+.theme--light {
+  background-color: map-get(map-get($themes, "light"), "bg1");
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
