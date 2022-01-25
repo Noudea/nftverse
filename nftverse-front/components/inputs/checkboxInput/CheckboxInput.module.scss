@@ -1,0 +1,39 @@
+@import '../../../theme/theme.scss';
+
+.btn_checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #8A8AA0;
+}
+
+.input_checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  margin: 0px;
+  accent-color: $violet;
+  color: white;
+}
+
+.input_checkbox:checked {
+  opacity: 1;
+}
+
+
+.label {
+  line-height: 26px;
+  font-size: 14px;
+  position: relative;
+  cursor: pointer;
+  padding-left: 29px;
+}

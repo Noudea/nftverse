@@ -1,12 +1,13 @@
 // Variables dépendants du thème
-$themes: ("dark": (base0: #839496,
+$themes: ("dark": (
     bg1: #09080d,
     bg2: #16151a,
     iv: #FFFFFF
   ),
-  "light": (base0: #657b83,
-    bg1: #586e75,
-    bg2: #eee8d5
+  "light": (
+    bg1: #FFFFFF,
+    bg2: #FFFFFF,
+    iv: #09080d
   ),
   
 );
@@ -16,10 +17,10 @@ $yellow: #b58900;
 $orange: #cb4b16;
 $red: #dc322f;
 $magenta: #d33682;
-$violet: #6c71c4;
+$violet: #4528DC;
 $blue: #268bd2;
 $cyan: #2aa198;
-$green: #859900;
+$green: #198754;
 
 
 // génère un nouveau mixin nommé themed a utiliser dans les modules

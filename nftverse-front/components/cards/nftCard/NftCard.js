@@ -1,4 +1,7 @@
+import { GradientButton } from '../../buttons'
 import styles from './NftCard.module.scss'
+import { MdHistory } from 'react-icons/md'
+import Link from 'next/link'
 
 /**
  * @class NftCard
@@ -6,25 +9,23 @@ import styles from './NftCard.module.scss'
 function NftCard () {
   return (
     <div className={styles.nftCard}>
-      <div className={styles.card_img_container}>
+      <div className={styles.nftCard_img_container}>
         <a href='Item-details.html'>
-          <img src='https://raroin.creabik.com/assets/img/items/item_1.png' alt='item img' />
-        </a>
-        <a href='#' class='likes space-x-3'>
-          <i class='ri-heart-3-fill' />
-          <span class='txt_sm'>1.2k</span>
+          <img src='https://raroin.creabik.com/assets/img/items/item_2.png' alt='item img' />
         </a>
       </div>
       <div className={styles.nftCard__content}>
         <h3 className={styles.nftCard_title}>Colorful Abstract Painting</h3>
-        <div>
-          <p>price</p>
-        </div>
       </div>
-      <div className={styles.hr} />
       <div className={styles.nftCard_footer}>
-        <p>View History</p>
-        <p>Place Bid</p>
+        <Link href='#'>
+          <a className={styles.nftCard_history}>
+            <MdHistory size={25} />
+            <p>View History</p>
+          </a>
+        </Link>
+        <p className={styles.nftCard_price}>2.45 ETH</p>
+        <GradientButton />
       </div>
     </div>
   )

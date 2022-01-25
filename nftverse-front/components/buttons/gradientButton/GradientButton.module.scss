@@ -1,0 +1,12 @@
+@import "../../../theme/theme.scss";
+
+.gradientButton {
+  padding:8px 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 100px;
+  //background: radial-gradient(100% 100% at 53.13% 0%, #31e7fa 0%, #4477ff 52.6%, #db74ff 100%);
+  background:$violet;
+  font-weight: bold;
+  color:white;
+}
