@@ -1,0 +1,31 @@
+@import '../../../theme/theme.scss';
+
+.wallet_connect_button {
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  border: 2px solid $violet;
+  color: #fff;
+  border-radius: 30px;
+  padding: 14px 30px 14px 30px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+  text-align: center;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.wallet_connect_button:hover {
+  background: #fff;
+  border: 2px solid #fff;
+  color:$violet
+}
+
+.wallet_connect_button_text {
+  margin-left: 10px;
+}

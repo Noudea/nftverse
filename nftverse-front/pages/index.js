@@ -1,5 +1,6 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { NftCard } from '../components/cards'
+import Modal from '../components/modals/modal/Modal'
 import ThemeContext from '../contexts/ThemeContext'
 
 /**
@@ -8,7 +9,7 @@ import ThemeContext from '../contexts/ThemeContext'
  */
 export default function Home () {
   const { isDark, toggleDark } = useContext(ThemeContext)
-
+  const [showModal, setShowModal] = useState(false)
   return (
     <div>
       <style jsx>{`
@@ -29,6 +30,13 @@ export default function Home () {
       }}
       >{isDark ? 'dark' : 'light'}
       </button>
+      <button onClick={() => setShowModal(true)}>Open Modal</button>
+      <Modal
+        onClose={() => setShowModal(false)}
+        show={showModal}
+      >
+        Hello from the modal!
+      </Modal>
       <div className='test'>
         <NftCard />
         <NftCard />
